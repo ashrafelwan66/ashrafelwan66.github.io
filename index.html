@@ -1,152 +1,569 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashraf Elwan | المستشار القانوني أشرف علوان</title>
-    <style>
-        :root {
-            --primary-color: #1a2a3a;
-            --accent-color: #c5a059;
-            --text-dark: #333333;
-            --bg-light: #f8f9fa;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashraf Elwan — Legal Counsel | المستشار القانوني أشرف علوان</title>
+<meta name="description" content="Ashraf Elwan — Senior Legal Counsel & International Legal Consultant. Corporate, Energy, Tax & Criminal Law. 34+ years before Egypt's Appellate and Cassation Courts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D1013;
+    --surface:#171B20;
+    --surface-2:#1E242B;
+    --line:#2B3138;
+    --gold:#C9A26A;
+    --gold-bright:#E4C68C;
+    --petrol:#4C7681;
+    --parchment:#EDE6D8;
+    --muted:#93A0A8;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  [data-lang="ar"] body{font-family:'Cairo',sans-serif;}
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+  [data-lang="en"] .ar-only{display:none;}
+  [data-lang="ar"] .en-only{display:none;}
+  [data-lang="ar"] .disp{font-family:'Amiri',serif;}
+  [data-lang="en"] .disp{font-family:'Fraunces',serif;}
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 5px solid var(--accent-color);
-        }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
 
-        .monogram {
-            font-size: 48px;
-            font-weight: bold;
-            color: var(--accent-color);
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            font-family: 'Times New Roman', Times, serif;
-        }
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  }
 
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(13,16,19,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:var(--maxw);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand svg{width:34px;height:34px;}
+  .brand-name{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:0.02em;color:var(--parchment);}
+  [data-lang="ar"] .brand-name{font-family:'Amiri',serif;font-size:1.2rem;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-top:2px;}
+  [data-lang="ar"] .brand-name span{font-family:'Cairo',sans-serif;letter-spacing:0;}
 
-        .subtitle {
-            font-size: 18px;
-            color: #bdc3c7;
-        }
+  nav{display:flex;align-items:center;gap:36px;}
+  .nav-links{display:flex;gap:32px;}
+  .nav-links a{
+    font-size:0.85rem;letter-spacing:0.04em;color:var(--muted);
+    position:relative;transition:color .25s;
+  }
+  [data-lang="ar"] .nav-links a{font-size:0.95rem;letter-spacing:0;}
+  .nav-links a:hover{color:var(--gold-bright);}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);
+    transition:width .25s;
+  }
+  .nav-links a:hover::after{width:100%;}
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+  #lang-toggle{
+    border:1px solid var(--line);background:transparent;color:var(--parchment);
+    padding:7px 16px;border-radius:999px;font-size:0.78rem;letter-spacing:0.08em;
+    cursor:pointer;transition:.25s;font-family:inherit;
+  }
+  #lang-toggle:hover{border-color:var(--gold);color:var(--gold-bright);}
+  #lang-toggle:focus-visible, a:focus-visible, button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 
-        .section-title {
-            color: var(--primary-color);
-            border-right: 4px solid var(--accent-color);
-            padding-right: 10px;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
+  .menu-btn{display:none;background:none;border:none;color:var(--parchment);font-size:1.4rem;cursor:pointer;}
 
-        ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
+  @media(max-width:860px){
+    .nav-links{
+      position:fixed;top:70px;left:0;right:0;background:var(--surface);
+      flex-direction:column;padding:24px 32px;gap:20px;border-bottom:1px solid var(--line);
+      transform:translateY(-130%);transition:transform .3s ease;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .menu-btn{display:block;}
+    nav{gap:14px;}
+  }
 
-        ul li {
-            position: relative;
-            padding-right: 25px;
-            margin-bottom: 12px;
-            font-size: 16px;
-        }
+  .hero{
+    min-height:100svh;display:flex;align-items:center;position:relative;
+    padding:140px 0 90px;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(76,118,129,0.18), transparent 60%),
+      radial-gradient(ellipse at 10% 100%, rgba(201,162,106,0.10), transparent 55%),
+      var(--ink);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:48px;}}
 
-        ul li::before {
-            content: "✦";
-            position: absolute;
-            right: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:22px;
+  }
+  [data-lang="ar"] .eyebrow{letter-spacing:0.02em;font-size:0.85rem;}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);}
 
-        .contact-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 15px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 18px;
-            transition: background 0.3s;
-            margin-top: 30px;
-            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
-        }
+  .hero h1{
+    font-size:clamp(2.4rem,5.4vw,4.1rem);
+    line-height:1.08;font-weight:500;color:var(--parchment);
+    margin-bottom:20px;
+  }
+  [data-lang="ar"] .hero h1{line-height:1.35;font-weight:700;}
+  .hero h1 em{font-style:normal;color:var(--gold-bright);}
 
-        .contact-btn:hover {
-            background-color: #b38f48;
-            color: white;
-        }
+  .hero .lede{
+    font-size:1.08rem;color:var(--muted);max-width:46ch;margin-bottom:34px;
+  }
+  [data-lang="ar"] .hero .lede{font-size:1.15rem;}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #7f8c8d;
-            margin-top: 40px;
-        }
-    </style>
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:14px 26px;
+    border-radius:2px;font-size:0.86rem;letter-spacing:0.05em;font-weight:600;
+    transition:.25s;
+  }
+  [data-lang="ar"] .btn{letter-spacing:0;font-size:0.95rem;}
+  .btn-primary{background:var(--gold);color:var(--ink);}
+  .btn-primary:hover{background:var(--gold-bright);transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--line);color:var(--parchment);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-bright);}
+
+  .stat-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;
+    border-top:1px solid var(--line);padding-top:26px;max-width:640px;
+  }
+  .stat-strip div{padding-inline-end:20px;}
+  .stat-strip strong{
+    display:block;font-family:'Fraunces',serif;font-size:1.7rem;color:var(--gold-bright);font-weight:500;
+  }
+  [data-lang="ar"] .stat-strip strong{font-family:'Amiri',serif;}
+  .stat-strip span{font-size:0.74rem;color:var(--muted);letter-spacing:0.03em;}
+  [data-lang="ar"] .stat-strip span{font-size:0.82rem;}
+  @media(max-width:520px){.stat-strip{grid-template-columns:1fr 1fr;row-gap:20px;}}
+
+  .emblem-wrap{display:flex;justify-content:center;align-items:center;position:relative;}
+  .emblem-wrap svg{width:min(340px,80%);height:auto;filter:drop-shadow(0 0 40px rgba(201,162,106,0.12));}
+  .ring{
+    position:absolute;inset:0;border:1px solid var(--line);border-radius:50%;
+    width:min(420px,92%);height:min(420px,92%);margin:auto;
+  }
+  .ring.r2{width:min(500px,104%);height:min(500px,104%);border-color:rgba(201,162,106,0.15);}
+
+  section{padding:110px 0;position:relative;}
+  .sec-head{max-width:640px;margin-bottom:60px;}
+  .sec-head .eyebrow{margin-bottom:14px;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:500;color:var(--parchment);}
+  [data-lang="ar"] .sec-head h2{font-weight:700;line-height:1.4;}
+  .sec-head p{color:var(--muted);margin-top:16px;font-size:1rem;}
+
+  .divider{
+    height:1px;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent);
+  }
+
+  .about-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:64px;align-items:start;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+  .about-mark{
+    aspect-ratio:1;border:1px solid var(--line);border-radius:4px;
+    display:flex;align-items:center;justify-content:center;background:var(--surface);
+    position:relative;overflow:hidden;
+  }
+  .about-mark::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(135deg,transparent,transparent 26px,rgba(201,162,106,0.05) 27px);
+  }
+  .about-mark span{font-family:'Fraunces',serif;font-size:5.5rem;color:var(--gold);position:relative;font-weight:500;}
+  [data-lang="ar"] .about-mark span{font-family:'Amiri',serif;}
+
+  .about-body p{color:var(--muted);margin-bottom:18px;font-size:1rem;}
+  .about-body p strong{color:var(--parchment);font-weight:600;}
+  .credential-list{margin-top:30px;display:flex;flex-direction:column;gap:14px;}
+  .credential-list li{
+    list-style:none;display:flex;gap:14px;align-items:baseline;font-size:0.92rem;color:var(--parchment);
+    border-inline-start:2px solid var(--gold);padding-inline-start:16px;
+  }
+  .credential-list li span{color:var(--muted);font-size:0.85rem;}
+
+  .practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(max-width:860px){.practice-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.practice-grid{grid-template-columns:1fr;}}
+  .practice-card{
+    background:var(--ink);padding:38px 30px;transition:.3s;
+  }
+  .practice-card:hover{background:var(--surface);}
+  .practice-card svg{width:30px;height:30px;color:var(--gold);margin-bottom:22px;stroke:var(--gold);}
+  .practice-card h3{font-size:1.05rem;color:var(--parchment);margin-bottom:10px;font-weight:600;}
+  [data-lang="ar"] .practice-card h3{font-size:1.15rem;}
+  .practice-card p{font-size:0.88rem;color:var(--muted);}
+  [data-lang="ar"] .practice-card p{font-size:0.95rem;}
+
+  .timeline{position:relative;padding-inline-start:0;}
+  .tl-item{
+    display:grid;grid-template-columns:120px 1fr;gap:32px;padding-block:28px;
+    border-block-start:1px solid var(--line);position:relative;
+  }
+  .tl-item:last-child{border-block-end:1px solid var(--line);}
+  @media(max-width:640px){.tl-item{grid-template-columns:1fr;gap:8px;}}
+  .tl-year{font-family:'Fraunces',serif;color:var(--gold-bright);font-size:1.05rem;font-weight:500;white-space:nowrap;}
+  [data-lang="ar"] .tl-year{font-family:'Amiri',serif;}
+  .tl-content h4{font-size:1.05rem;color:var(--parchment);margin-bottom:6px;font-weight:600;}
+  [data-lang="ar"] .tl-content h4{font-size:1.15rem;}
+  .tl-content p{font-size:0.9rem;color:var(--muted);max-width:60ch;}
+  [data-lang="ar"] .tl-content p{font-size:0.97rem;}
+
+  .eng-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:760px){.eng-grid{grid-template-columns:repeat(2,1fr);}}
+  .eng-card{
+    border:1px solid var(--line);padding:26px 20px;text-align:center;font-size:0.85rem;
+    color:var(--muted);transition:.25s;
+  }
+  .eng-card:hover{border-color:var(--gold);color:var(--parchment);}
+
+  .badge-row{display:flex;flex-wrap:wrap;gap:12px;}
+  .badge{
+    border:1px solid var(--line);padding:9px 18px;border-radius:999px;font-size:0.8rem;color:var(--muted);
+  }
+  [data-lang="ar"] .badge{font-size:0.88rem;}
+
+  .contact-section{
+    background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:36px;}}
+  .contact-section h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:500;margin-bottom:18px;}
+  [data-lang="ar"] .contact-section h2{font-weight:700;line-height:1.4;}
+  .contact-section p{color:var(--muted);max-width:48ch;}
+  .contact-cards{display:flex;flex-direction:column;gap:14px;}
+  .contact-card{
+    display:flex;align-items:center;gap:16px;border:1px solid var(--line);padding:18px 22px;
+    transition:.25s;
+  }
+  .contact-card:hover{border-color:var(--gold);}
+  .contact-card svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;}
+  .contact-card div strong{display:block;font-size:0.92rem;color:var(--parchment);}
+  .contact-card div span{font-size:0.82rem;color:var(--muted);}
+
+  footer{padding:36px 0;text-align:center;}
+  footer p{font-size:0.78rem;color:var(--muted);}
+  [data-lang="ar"] footer p{font-size:0.85rem;}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="monogram">AE</div>
-        <h1>Ashraf Elwan</h1>
-        <div class="subtitle">المستشار القانوني وخبير تشريعات الشركات والضرائب</div>
-    </header>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" stroke="#C9A26A" stroke-width="1"/>
+        <path d="M24 10V38M14 16L24 10L34 16M14 16C14 16 12 22 12 24C12 27 15 29 17 29C19 29 22 27 22 24C22 22 20 16 20 16M34 16C34 16 32 22 32 24C32 27 29 29 27 29C29 29 32 27 32 24C32 22 30 16 30 16" stroke="#C9A26A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17 33H31" stroke="#C9A26A" stroke-width="1.1" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-name">
+        <span class="en-only">Ashraf Elwan<span>Legal &amp; Tax Counsel</span></span>
+        <span class="ar-only">أشرف علوان<span>مستشار قانوني وضريبي</span></span>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="en-only">About</a><a href="#about" class="ar-only">نبذة</a>
+        <a href="#practice" class="en-only">Practice Areas</a><a href="#practice" class="ar-only">مجالات العمل</a>
+        <a href="#experience" class="en-only">Experience</a><a href="#experience" class="ar-only">المسيرة المهنية</a>
+        <a href="#contact" class="en-only">Contact</a><a href="#contact" class="ar-only">تواصل</a>
+      </div>
+      <button id="lang-toggle" aria-label="Switch language">
+        <span class="en-only">العربية</span><span class="ar-only">English</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
 
-    <div class="container">
-        <h2 class="section-title">الخدمات الاستشارية والقانونية</h2>
-        <ul>
-            <li>تقديم الاستشارات القانونية والشرعية والضريبية للشركات الكبرى.</li>
-            <li>إعداد وصياغة ومراجعة العقود والاتفاقيات الدولية والمحلية باللغتين العربية والإنجليزية.</li>
-            <li>تمثيل الشركات في النزاعات الإدارية والمالية والضريبية أمام الجهات المختصة.</li>
-            <li>تقديم الحلول القانونية المبتكرة للمشروعات التجارية والتطوير الهيكلي للمؤسسات.</li>
-        </ul>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">
+        <span class="en-only">Cairo, Egypt — Appellate &amp; Cassation Courts</span>
+        <span class="ar-only">القاهرة، مصر — محاكم الاستئناف والنقض</span>
+      </div>
+      <h1 class="disp">
+        <span class="en-only">Legal counsel built for <em>energy, tax &amp; complex disputes.</em></span>
+        <span class="ar-only">استشارات قانونية بخبرة <em>٣٤ عامًا</em> في قطاعي الطاقة والضرائب</span>
+      </h1>
+      <p class="lede">
+        <span class="en-only">Ashraf Elwan advises multinational energy companies, corporates, and private clients across Egypt and the MENA region — from petroleum licensing and corporate structuring to tax litigation and criminal defense.</span>
+        <span class="ar-only">أشرف علوان يقدّم الاستشارات القانونية للشركات متعددة الجنسيات في قطاع الطاقة والشركات والعملاء الخاصين في مصر والمنطقة العربية — من تراخيص البترول والهيكلة القانونية للشركات إلى المنازعات الضريبية والدفاع الجنائي.</span>
+      </p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">
+          <span class="en-only">Request a Consultation</span><span class="ar-only">اطلب استشارة</span>
+        </a>
+        <a href="https://wa.me/201159255337" class="btn btn-ghost" target="_blank" rel="noopener">
+          <span class="en-only">WhatsApp Direct</span><span class="ar-only">تواصل عبر واتساب</span>
+        </a>
+      </div>
 
-        <h2 class="section-title">نبذة عن المكتب</h2>
-        <p style="text-align: justify; font-size: 16px; color: #555;">
-            نلتزم بتقديم أعلى مستويات الجودة والاحترافية في العمل القانوني، مع التركيز على حماية مصالح عملائنا وتوفير بيئة قانونية آمنة ومستقرة لاستثماراتهم وأعمالهم، بالاعتماد على أدوات التحليل الحديثة والخبرة الطويلة الممتدة في قطاع الشركات والضرائب.
-        </p>
-
-        <a href="https://wa.me/201159255337" class="contact-btn" target="_blank">تواصل مباشرة عبر واتساب</a>
+      <div class="stat-strip">
+        <div>
+          <strong>34+</strong>
+          <span class="en-only">Years of Practice</span><span class="ar-only">سنة خبرة</span>
+        </div>
+        <div>
+          <strong class="en-only">2003</strong><strong class="ar-only">٢٠٠٣</strong>
+          <span class="en-only">Counsel to TotalEnergies Egypt</span><span class="ar-only">مستشار توتال إنرجي مصر منذ</span>
+        </div>
+        <div>
+          <strong class="en-only">88874</strong><strong class="ar-only">٨٨٨٧٤</strong>
+          <span class="en-only">Egyptian Bar Association No.</span><span class="ar-only">رقم قيد نقابة المحامين</span>
+        </div>
+      </div>
     </div>
 
-    <footer>
-        &copy; 2026 Ashraf Elwan. جميع الحقوق محفوظة.
-    </footer>
+    <div class="emblem-wrap">
+      <div class="ring"></div>
+      <div class="ring r2"></div>
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="100" y1="24" x2="100" y2="164" stroke="#C9A26A" stroke-width="1.4"/>
+        <line x1="46" y1="46" x2="154" y2="46" stroke="#C9A26A" stroke-width="1.4"/>
+        <path d="M46 46 C 30 78, 30 96, 46 108 C 62 96, 62 78, 46 46 Z" stroke="#E4C68C" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M154 46 C 138 78, 138 96, 154 108 C 170 96, 170 78, 154 46 Z" stroke="#E4C68C" stroke-width="1.4" stroke-linejoin="round"/>
+        <line x1="46" y1="108" x2="46" y2="118" stroke="#C9A26A" stroke-width="1.2"/>
+        <line x1="154" y1="108" x2="154" y2="118" stroke="#C9A26A" stroke-width="1.2"/>
+        <circle cx="100" cy="40" r="4.5" fill="#0D1013" stroke="#C9A26A" stroke-width="1.4"/>
+        <path d="M78 164 L122 164 L114 178 L86 178 Z" stroke="#C9A26A" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="100" cy="100" r="88" stroke="#2B3138" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider wrap"></div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-mark"><span>AE</span></div>
+    <div class="about-body">
+      <div class="sec-head" style="margin-bottom:24px;">
+        <div class="eyebrow"><span class="en-only">About</span><span class="ar-only">نبذة عني</span></div>
+        <h2 class="disp"><span class="en-only">A career built on the ground, in the boardroom, and in court.</span><span class="ar-only">مسيرة مهنية بين الميدان وقاعات مجالس الإدارة والمحاكم</span></h2>
+      </div>
+      <p class="en-only"><strong>Ashraf Elwan</strong> is a senior Egyptian lawyer and international legal consultant with more than three decades of practice before Egypt's Appellate and Cassation Courts. His career began inside the energy sector itself — as Deputy Licensing Manager at Mobil Egypt (1997–2003), where he led the asset-title audit of filling-station real estate ahead of the global Mobil–Exxon merger — before he was appointed Legal Counsel and Representative for Total Marketing Egypt (now TotalEnergies Marketing Egypt) in 2003, a role he has held for over twenty years.</p>
+      <p class="en-only">Alongside his corporate work, he has run his own practice since 1991, advising trading, technology, and manufacturing companies, sitting on Egypt's Tax Legislation Committee, and defending clients in complex criminal matters. He trains fuel-station and depot personnel on hazardous-materials handling and emergency response, and has completed specialized programs in anti-corruption, anti-money laundering, and data protection.</p>
+      <p class="ar-only"><strong>أشرف علوان</strong> محامٍ مصري كبير ومستشار قانوني دولي بخبرة تتجاوز ثلاثة عقود أمام محاكم الاستئناف والنقض المصرية. بدأت مسيرته من داخل قطاع الطاقة نفسه، حيث شغل منصب نائب مدير التراخيص بشركة موبيل مصر (١٩٩٧–٢٠٠٣)، وقاد فحص الملكية العقارية لمحطات الوقود تمهيدًا لاندماج موبيل وإكسون العالمي، قبل أن يُعيَّن مستشارًا قانونيًا وممثلًا لشركة توتال ماركتنج مصر (توتال إنرجي حاليًا) عام ٢٠٠٣، وهو المنصب الذي يشغله منذ أكثر من عشرين عامًا.</p>
+      <p class="ar-only">إلى جانب عمله المؤسسي، يدير مكتبه الخاص منذ عام ١٩٩١، حيث يقدم الاستشارات لشركات التجارة والتكنولوجيا والصناعة، وهو عضو في لجنة التشريع الضريبي، ويتولى الدفاع في القضايا الجنائية المعقدة. كما يقدّم تدريبات متخصصة للعاملين بمحطات الوقود والمستودعات على التعامل مع المواد الخطرة والاستجابة للطوارئ، وأتم برامج متخصصة في مكافحة الفساد وغسل الأموال وحماية البيانات.</p>
+
+      <ul class="credential-list">
+        <li><span class="en-only">LLB</span><span class="ar-only">ليسانس حقوق</span> — <span class="en-only">Cairo University, 1990</span><span class="ar-only">جامعة القاهرة، ١٩٩٠</span></li>
+        <li><span class="en-only">Master's Degree</span><span class="ar-only">ماجستير</span> — <span class="en-only">Law, Business Administration &amp; Contracts, 1996</span><span class="ar-only">القانون وإدارة الأعمال والعقود، ١٩٩٦</span></li>
+        <li><span class="en-only">Bachelor's Degree</span><span class="ar-only">بكالوريوس</span> — <span class="en-only">Islamic Sharia, Al-Azhar University</span><span class="ar-only">الشريعة الإسلامية، جامعة الأزهر</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider wrap"></div>
+
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="en-only">Practice Areas</span><span class="ar-only">مجالات العمل</span></div>
+      <h2 class="disp"><span class="en-only">Counsel across the full commercial lifecycle</span><span class="ar-only">استشارات تغطي كافة مراحل النشاط التجاري</span></h2>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+    <div class="practice-grid">
+
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <h3 class="en-only">Corporate &amp; Commercial Law</h3><h3 class="ar-only">القانون التجاري والشركات</h3>
+        <p class="en-only">Structuring, governance, and cross-border agreements for corporates operating in Egypt and the region.</p>
+        <p class="ar-only">هيكلة الشركات والحوكمة والاتفاقيات العابرة للحدود للشركات العاملة في مصر والمنطقة.</p>
+      </div>
+
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M9 8h6l2 12H7L9 8Z"/><circle cx="12" cy="19" r="1.2"/></svg>
+        <h3 class="en-only">Energy &amp; Petroleum Law</h3><h3 class="ar-only">قانون الطاقة والبترول</h3>
+        <p class="en-only">Exploration, drilling, marketing, and filling-station licensing — built on in-house experience at a major operator.</p>
+        <p class="ar-only">تراخيص الاستكشاف والحفر والتسويق ومحطات الوقود، بخبرة داخلية مكتسبة من العمل داخل شركة تشغيل كبرى.</p>
+      </div>
+
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4z"/><path d="M4 12h10M4 16h10M4 20h16"/></svg>
+        <h3 class="en-only">Tax Advisory &amp; Litigation</h3><h3 class="ar-only">الاستشارات والمنازعات الضريبية</h3>
+        <p class="en-only">Advisory before Egypt's tax authorities and appellate courts, with a seat on the Tax Legislation Committee.</p>
+        <p class="ar-only">التمثيل أمام مصلحة الضرائب ومحاكم الاستئناف، بحكم عضويته في لجنة التشريع الضريبي.</p>
+      </div>
+
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/></svg>
+        <h3 class="en-only">Criminal Defense</h3><h3 class="ar-only">الدفاع الجنائي</h3>
+        <p class="en-only">Representation before criminal courts, from investigation stage through appeal and cassation.</p>
+        <p class="ar-only">التمثيل أمام المحاكم الجنائية بدءًا من مرحلة التحقيق وحتى الاستئناف والنقض.</p>
+      </div>
+
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/><path d="M9 13h6M9 17h6"/></svg>
+        <h3 class="en-only">Bilingual Contract Drafting</h3><h3 class="ar-only">صياغة العقود ثنائية اللغة</h3>
+        <p class="en-only">Domestic and international agreements drafted and reviewed in both Arabic and English.</p>
+        <p class="ar-only">مراجعة وصياغة العقود المحلية والدولية باللغتين العربية والإنجليزية.</p>
+      </div>
+
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h3 class="en-only">Labor &amp; Regulatory Affairs</h3><h3 class="ar-only">شؤون العمل والتنظيم</h3>
+        <p class="en-only">Internal employment bylaws, disciplinary investigations, and representation before government authorities.</p>
+        <p class="ar-only">إعداد لوائح تشغيل الموظفين وإجراء التحقيقات الإدارية والتمثيل أمام الجهات الحكومية.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="en-only">Experience</span><span class="ar-only">المسيرة المهنية</span></div>
+      <h2 class="disp"><span class="en-only">Three decades, one continuous practice</span><span class="ar-only">ثلاثة عقود من الممارسة المستمرة</span></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year en-only">1990</div><div class="tl-year ar-only">١٩٩٠</div>
+        <div class="tl-content">
+          <h4 class="en-only">LLB, Cairo University</h4><h4 class="ar-only">ليسانس الحقوق، جامعة القاهرة</h4>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year en-only">1991</div><div class="tl-year ar-only">١٩٩١</div>
+        <div class="tl-content">
+          <h4 class="en-only">Founded private legal practice</h4><h4 class="ar-only">تأسيس المكتب الخاص</h4>
+          <p class="en-only">Began independent practice, building a portfolio of corporate clients across trading, technology, and manufacturing — advisory work he continues to lead today.</p>
+          <p class="ar-only">بدء الممارسة المستقلة، وبناء محفظة من العملاء المؤسسيين في قطاعات التجارة والتكنولوجيا والصناعة — وهو العمل الاستشاري الذي لا يزال يقوده حتى اليوم.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year en-only">1997–2003</div><div class="tl-year ar-only">١٩٩٧–٢٠٠٣</div>
+        <div class="tl-content">
+          <h4 class="en-only">Deputy Licensing Manager, Mobil Egypt</h4><h4 class="ar-only">نائب مدير التراخيص، موبيل مصر</h4>
+          <p class="en-only">Led the 1999 asset-title audit of filling-station real estate ahead of the global Mobil–Exxon merger.</p>
+          <p class="ar-only">قاد عملية فحص الملكية العقارية لمحطات الوقود عام ١٩٩٩ تمهيدًا لاندماج موبيل وإكسون العالمي.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year en-only">2003 — Present</div><div class="tl-year ar-only">٢٠٠٣ — حتى الآن</div>
+        <div class="tl-content">
+          <h4 class="en-only">Legal Counsel &amp; Appointed Representative, TotalEnergies Marketing Egypt</h4><h4 class="ar-only">مستشار قانوني وممثل معتمد، توتال إنرجي ماركتنج مصر</h4>
+          <p class="en-only">Ongoing external counsel and appointed representative to the multinational energy company's Egypt operations.</p>
+          <p class="ar-only">مستشار خارجي وممثل معتمد لعمليات الشركة متعددة الجنسيات في مصر بشكل مستمر.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider wrap"></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="en-only">Practice Footprint</span><span class="ar-only">نطاق الممارسة</span></div>
+      <h2 class="disp"><span class="en-only">Trusted across sectors</span><span class="ar-only">ثقة عبر قطاعات متعددة</span></h2>
+    </div>
+    <div class="eng-grid">
+      <div class="eng-card en-only">TotalEnergies Marketing Egypt</div><div class="eng-card ar-only">توتال إنرجي ماركتنج مصر</div>
+      <div class="eng-card en-only">Egypt's Tax Legislation Committee</div><div class="eng-card ar-only">لجنة التشريع الضريبي</div>
+      <div class="eng-card en-only">Trading &amp; Contracting</div><div class="eng-card ar-only">التجارة والمقاولات</div>
+      <div class="eng-card en-only">Technology &amp; Manufacturing</div><div class="eng-card ar-only">التكنولوجيا والصناعة</div>
+    </div>
+
+    <div style="margin-top:64px;">
+      <div class="sec-head" style="margin-bottom:26px;">
+        <div class="eyebrow"><span class="en-only">Compliance &amp; Training</span><span class="ar-only">التدريب والالتزام</span></div>
+      </div>
+      <div class="badge-row">
+        <span class="badge en-only">Anti-Corruption</span><span class="badge ar-only">مكافحة الفساد</span>
+        <span class="badge en-only">Anti-Money Laundering</span><span class="badge ar-only">مكافحة غسل الأموال</span>
+        <span class="badge en-only">Tax Evasion Prevention</span><span class="badge ar-only">مكافحة التهرب الضريبي</span>
+        <span class="badge en-only">Data Protection &amp; Confidentiality</span><span class="badge ar-only">حماية البيانات والسرية</span>
+        <span class="badge en-only">Administrative Control Authority Program</span><span class="badge ar-only">برنامج هيئة الرقابة الإدارية</span>
+        <span class="badge en-only">Hazardous Materials &amp; Emergency Response</span><span class="badge ar-only">التعامل مع المواد الخطرة والطوارئ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow"><span class="en-only">Get in Touch</span><span class="ar-only">تواصل معنا</span></div>
+      <h2 class="disp"><span class="en-only">Let's discuss your matter.</span><span class="ar-only">لنتحدث عن قضيتك</span></h2>
+      <p class="en-only">Available for corporate retainers, one-off consultations, and litigation representation across Egypt and the MENA region.</p>
+      <p class="ar-only">متاح للتعاقدات المؤسسية والاستشارات الفردية والتمثيل القضائي في مصر ومنطقة الشرق الأوسط وشمال أفريقيا.</p>
+    </div>
+    <div class="contact-cards">
+      <a class="contact-card" href="https://wa.me/201159255337" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21l1.6-4.8A9 9 0 1 1 8.8 19.4L3 21Z"/></svg>
+        <div><strong>WhatsApp</strong><span>+20 115 925 5337</span></div>
+      </a>
+      <a class="contact-card" href="mailto:ashrafelmasry1961@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><strong class="en-only">Email</strong><strong class="ar-only">البريد الإلكتروني</strong><span>ashrafelmasry1961@gmail.com</span></div>
+      </a>
+      <a class="contact-card" href="https://linkedin.com/in/elwan-elmasry-29b594177" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M12 11c1.5-2 4-2 4 1v4"/></svg>
+        <div><strong>LinkedIn</strong><span class="en-only">Ashraf Elwan</span><span class="ar-only">أشرف علوان</span></div>
+      </a>
+      <div class="contact-card" style="cursor:default;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><strong class="en-only">Office</strong><strong class="ar-only">المكتب</strong><span class="en-only">Cairo, Egypt</span><span class="ar-only">القاهرة، مصر</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="en-only">© 2026 Ashraf Elwan for Law and Legal Consultations. All rights reserved.</p>
+  <p class="ar-only">© ٢٠٢٦ أشرف مصطفى علوان للمحاماة والاستشارات القانونية. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+  const html = document.documentElement;
+  const toggle = document.getElementById('lang-toggle');
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  function setLang(lang){
+    html.setAttribute('data-lang', lang);
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    localStorage.setItem('site-lang', lang);
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-lang');
+    setLang(current === 'en' ? 'ar' : 'en');
+  });
+
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  try{
+    const saved = localStorage.getItem('site-lang');
+    if(saved) setLang(saved);
+  }catch(e){}
+</script>
 
 </body>
 </html>
